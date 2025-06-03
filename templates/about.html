@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LyriGist AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Trispace:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="/"
+          ><img src="{{ url_for('static', filename='imgs/LyriGistheader.svg') }}" alt="logo"
+        /></a>
+
+        <div class="nav-right">
+          <ul class="nav__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict">Predict</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+          
+          <a class="cta" href="#">Login</a>
+          <p class="menu cta">Menu</p>
+        </div>
+      </nav>
+    </header>
+    <div class="overlay">
+      <a class="close">&times;</a>
+      <div class="overlay__content">
+        <a href="#">Home</a>
+        <a href="#">Predict</a>
+        <a href="#">About</a>
+      </div>
+    </div>
+
+    <article class="desc">
+      <h1>About Us</h1>
+      <article class="minidesc">
+        <p>
+          <b>LyriGist AI</b> is dedicated to revolutionizing the way we understand and classify English music through the power of artificial intelligence. By analyzing song lyrics with advanced machine learning techniques, <b>LyriGist AI</b> brings precision and insight into genre detection, offering music enthusiasts, researchers, and industry professionals a unique tool for exploring the vast landscape of English-language music.
+        </p>
+        <br>
+        <p>
+          Driven by a passion for music and technology, <b>LyriGist AI</b> deciphers the nuances of lyrical expression, identifying key themes, emotions, and patterns that define various musical styles. Whether it’s pop, rock, jazz, hip-hop, or classical, our AI ensures accurate classification, enabling deeper exploration of English musical heritage.
+        </p>
+        <br>
+        <p>
+          Collaborating with artists, producers, and music platforms, we push the boundaries of AI-powered music analytics, fostering innovation in how songs are categorized, recommended, and studied. <b>LyriGist AI</b> is committed to shaping the future of music intelligence, bridging creativity and data science to unlock new possibilities in the way we interact with English-language music.
+        </p>
+      </article>
+      <article class="desc">
+          <h1>Vision</h1>
+          <article class="minidesc">
+            <p>
+              Empower music lovers, creators, and analysts with cutting-edge AI technology to enhance the understanding and classification of English songs
+            </p>
+          </article>
+      </article>
+      <article class="desc">
+          <h1>Mission</h1>
+          <article class="minidesc">
+            <p>
+              <b>LyriGist AI</b> strives to create an intelligent and adaptive system capable of detecting English song genres with unparalleled accuracy. By leveraging advanced AI algorithms and linguistic analysis, we aim to provide valuable insights into musical trends, support industry professionals, and celebrate the diversity of English-language music.
+            </p>
+          </article>
+      </article>
+    </article>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <img src="{{ url_for('static', filename='imgs/LyriGistheader.svg') }}" />
+        <div class="newsletter">
+          <p class="newsletter-title">Subscribe to our Newsletter</p>
+          <p class="newsletter-description">
+            Get the latest updates delivered
+            straight to your inbox.
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-button">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 LyriGist. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

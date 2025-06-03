@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LyriGist AI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Trispace:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" />
+    <script>
+      function submitForm() {
+          document.getElementById('upload-form').submit();
+      }
+  </script>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="/"
+          ><img src="{{ url_for('static', filename='imgs/LyriGistheader.svg') }}" alt="logo"
+        /></a>
+
+        <div class="nav-right">
+          <ul class="nav__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/predict">Predict</a></li>
+            <li><a href="/about">About</a></li>
+          </ul>
+          
+          <a class="cta" href="#">Login</a>
+          <p class="menu cta">Menu</p>
+        </div>
+      </nav>
+    </header>
+
+    <div class="overlay">
+      <a class="close">&times;</a>
+      <div class="overlay__content">
+        <a href="#">Home</a>
+        <a href="#">Predict</a>
+        <a href="#">About</a>
+      </div>
+    </div>
+
+    <article class="desc top-nav">
+      <h1>Predict a Song Genre</h1>
+      <article class="minidesc">
+        <p>
+          Using our LyriGist AI model, you can predict the genre of a song through its lyrics. 
+        </p>
+      </article>
+    </article>
+
+    <div class="predict-section">
+      {% if image_file %}
+            <img class="uploaded-img" src="{{ url_for('static', filename='uploads/' + image_file) }}" alt="Uploaded File">
+      {% endif %}
+
+      <div class="predict-box">
+        <form id="predict-form" method="POST">
+          <label for="lyrics" class="lyrics-label">Paste Song Lyrics Below:</label>
+          <textarea id="lyrics" name="lyrics" rows="8" class="lyrics-textarea" placeholder="Enter song lyrics here..." required></textarea>
+          <button type="submit" class="upload-button">Predict Genre</button>
+        </form>
+
+        {% if lyrics %}
+            <p class="file-name">Predicting song genre for lyrics:</p>
+            <pre class="lyrics-preview">{{ lyrics }}</pre>
+        {% else %}
+            <p class="file-name">Paste lyrics to start predicting...</p>
+        {% endif %}
+
+        <p><b>LyriGist AI</b></p>
+        <p>Song Lyric Classification Model</p>
+        <p>Model Version: 1.0</p>
+        <p>Accuracy: 64.80%</p>
+
+        {% if prediction_result %}
+        <p id="genre-predicted"><b>Predicted Genre:</b> <span class="text-genre">{{ prediction_result }}</span></p>
+            <p>Confidence Level: {{ confidence_level }}%</p>
+        {% endif %}
+      </div>
+    </div>
+
+    <article class="desc">
+      <h1>Don’t Have Any Lyrics?</h1>
+      <article class="minidesc">
+        <p>
+          We recommend you use your own lyrics, or find one yourself to ensure that there no biases. However, if you don’t know where to look for the sample lyrics with genre, you may simply find it in dataset sites such as Kaggle, or find it through music streaming apps.
+        </p>
+      </article>
+    </article>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <img src="{{ url_for('static', filename='imgs/LyriGistheader.svg') }}" />
+        <div class="newsletter">
+          <p class="newsletter-title">Subscribe to our Newsletter</p>
+          <p class="newsletter-description">
+            Get the latest udpdates delivered
+            straight to your inbox.
+          </p>
+          <form class="newsletter-form">
+            <input
+              type="email"
+              placeholder="Enter your email"
+              class="newsletter-input"
+            />
+            <button type="submit" class="newsletter-button">Submit</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 LyriGist. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

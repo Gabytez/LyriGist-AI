@@ -1,0 +1,241 @@
+body {
+  font-family: "Tomorrow";
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #141715;
+  overflow: scroll;
+}
+
+* {
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+  background-color: #141715;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav__links a,
+.overlay__content a {
+  font-family: "Tomorrow";
+  font-weight: 500;
+  color: #d0e0e6;
+  text-decoration: none;
+}
+
+.nav__links {
+  list-style: none;
+  display: flex;
+}
+
+.nav__links li {
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: color 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: #6ff0f2;
+}
+
+.cta {
+  font-family: "Tomorrow";
+  color: #000000;
+  padding: 9px 25px;
+  background-color: #6ff0f2;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease 0s;
+}
+
+.cta:hover {
+  background-color: #6ff0f2cc;
+}
+
+/* Mobile Nav */
+
+.menu {
+  display: none;
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  background-color: #24252a;
+  overflow-x: hidden;
+  transition: width 0.5s ease 0s;
+}
+
+.overlay--active {
+  width: 100%;
+}
+
+.overlay__content {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay a {
+  padding: 15px;
+  font-size: 36px;
+  display: block;
+  transition: color 0.3s ease 0s;
+}
+
+.overlay a:hover,
+.overlay a:focus {
+  color: #0088a9;
+}
+.overlay .close {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #edf0f1;
+}
+
+@media screen and (max-height: 450px) {
+  .overlay a {
+    font-size: 20px;
+  }
+  .overlay .close {
+    font-size: 40px;
+    top: 15px;
+    right: 35px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .nav__links,
+  .cta {
+    display: none;
+  }
+  .menu {
+    display: initial;
+  }
+}
+
+/* description title */
+.desc {
+  font-family: "Realest";
+  src: url(fonts/Realest-Extended.otf);
+  margin: 0px;
+  padding: 100px;
+  background-color: #141715;
+  text-align: center;
+  color: #d0e0e6;
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.desc > h1 {
+  margin: 10px;
+  padding: 5px;
+}
+
+.minidesc {
+  font-family: "Tomorrow";
+  font-weight: 200;
+}
+
+.minidesc > p {
+  margin: 4px;
+  font-size: 50%;
+}
+
+.footer {
+  padding: 40px 20px;
+  background-color: #1a1a1a; /* Footer background */
+  text-align: center;
+}
+
+.footer-content {
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 600;
+  color: #cfd9df;
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.newsletter-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #cfd9df;
+  margin: 10px 0;
+}
+
+.newsletter-description {
+  font-size: 14px;
+  color: #9ca6ac;
+  margin-bottom: 15px;
+}
+
+.newsletter-form {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+}
+
+.newsletter-input {
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  width: 300px;
+  background-color: #cfd9df;
+  color: #333;
+  font-size: 14px;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.newsletter-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #555;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.newsletter-button:hover {
+  background-color: #777;
+}
+
+.footer-bottom p {
+  font-size: 12px;
+  color: #9ca6ac;
+  margin-top: 20px;
+}
